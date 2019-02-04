@@ -1,0 +1,332 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+<!--site-carousel-->
+<section id="site-carousel">
+	<!-- carsoul -->
+
+ <div class="container justify-content-center">
+   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+
+          {% for images in imageOne.all %}
+         
+          <div class="carousel-item active">  
+            <img class="d-block w-100" src="{{images.image.url}}">
+          </div>
+          
+          <div class="carousel-item">
+          
+            <img class="d-block w-100" src="{{images.image.url}}">
+          </div>
+         
+          
+          {% endfor%}
+          
+          
+      
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="ly-icon" aria-hidden="true"><i class="fas fa-chevron-circle-left"></i></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="ly-icon" aria-hidden="true"><i class="fas fa-chevron-circle-right"></i></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      </div> 
+    </div>
+  </section>
+  
+	<!-- card + text -->
+  <!--
+  <section id="card-link" class="py-5 ">
+   <div class="container">
+     <div class="row justify-content-center">
+
+       <div class="col-sm-12 col-md-4 mt-1">
+         <div class="my-card card bg-dark text-white ml-auto mr-auto " style="width: 20rem; min-height: 100px;">
+          <img class="card-img" src="images/image.png" alt="Card image">
+          <div class="card-img-overlay">
+            <h4 class="card-title uppercase">TAKE</h4>
+            <h5 class="card-subtitle">The First Step</h5>
+            <ul class="py-3">
+              <li class="py-2"><a href="#" class="card-link"> New to Collecting?</a></li>
+              <li class="py-2"><a href="#" class="card-link"> Why use TCG and TCG/DNA?</a></li>
+              <li class="py-2"><a href="#" class="card-link"> Ten Tias for Building a Collection</a></li>
+              <li class="py-2"><a href="#" class="card-link"> TCG Security: A Buyer's Guid</a></li>
+            </ul>
+          </div>
+        </div>
+       </div>
+
+       <div class="col-sm-12 col-md-4 mt-1">
+         <div class="my-card card bg-dark text-white ml-auto mr-auto " style="width: 20rem; min-height: 100px;">
+          <img class="card-img" src="images/image.png" alt="Card image">
+          <div class="card-img-overlay">
+            <h4 class="card-title uppercase">Submit</h4>
+            <h5 class="card-subtitle">Your Collectibles</h5>
+            <ul class="py-3">
+              <li class="py-2"><a href="#" class="card-link"> Join Collectors Club</a></li>
+              <li class="py-2"><a href="#" class="card-link"> Visit Submission Center</a></li>
+              <li class="py-2"><a href="#" class="card-link"> Show Schedule</a></li>
+              <li class="py-2"><a href="#" class="card-link"> Collectors Club Specials</a></li>
+            </ul>
+          </div>
+        </div>
+       </div>
+
+     </div>
+    </div>
+  </section>
+
+</section>
+-->
+<!--collectible-->
+<section id="collectible" class="py-5">
+
+  <div class="container">
+      <div class="row justify-content-center">
+        
+  <section class="col-lg-5">
+    <div class="collectible-header text-center">
+            <h3>TCG & TCG/DNA </h3>
+            <h3>Cert Verification</h3>
+          </div>
+          <div class="container">
+      
+          <div id="carouselExampleIndicators" class="carousel slide py-5 clickable" data-ride="carousel">
+               <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner justify-content-center">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="{% static 'images/cert-card.png'%}" >
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 mr-auto  " src="{% static 'images/cert-dna.png'%}" >
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{% static 'images/cert-card-blue.png'%}" >
+                </div>
+              </div> 
+            </div>
+
+            <div class="tCg-number py-5">
+              <div class="form-group">
+                <input type="text" class="form-control" id="search" placeholder="Input TCG or TCG/DNA Cert Number">
+              </div>
+              <a href="#" class="btn btn-primary btn-block uppercase">verify</a>
+            </div>
+
+            <div class="tip text-center">
+              <p><a href="" data-toggle="tooltip" data-placement="top" title="Exams, ulturasound and more.."><i class="fas fa-question-circle mr-1"></i></a>Quick tip</p>
+
+          </div>     
+
+    </section>
+
+  <section class="col-lg-7 px-5 text-center">
+    <div class="collectible-values ">
+      <h2>Collectibles Values & Pricing</h2>
+      <p class="mt-2" >Find out what your collectibles are worth, and if they are rare or common, using these free TCG
+        resources.</p>
+
+    <div class="row d-flex d-flex-inline-block py-5">
+        <div class="col-sm-6">
+          <a href="{% url 'smrpriceguide'%}">
+            <div class="circle">
+              <img class="certhome-img-apr " src="{% static 'images/dollar.png' %}">
+            </div>
+            <p class="sub">SMR Price
+              <br>
+             Guide
+           </p>
+            <p>The official price guide
+              <br>
+              for TCG-graded
+              <br>
+              collectibles
+            </p>
+          </a>
+        </div>
+        
+        <div class="col-sm-6">
+          <a href="{% url 'popreport'%}">
+            <div class="circle">
+              <img class="certhome-img-apr" src="{% static 'images/pop.png' %}">
+            </div>
+                <p class="sub">Population
+                  <br>
+                  Report
+                 </p>
+                <p>Records for all cards,
+                  <br>
+                  tickets, packs, coins and
+                  <br>
+                  pins graded by TCG
+                </p>
+              </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+    </div>
+  </div>
+  
+</section>
+
+
+<!--auth-->
+<section id="auth">
+  
+  <div class="text-center">
+    <div class="container services">
+     <div class="row">
+        <div class="col-xs-12 col-md-6 services-block pb-5">
+            <h3>Authentication &amp; Grading</h3>
+            <p>Maximize the value, liquidity and security of your collectibles with TCG & TCG/DNA.</p>
+            <div class="services-shows">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <a href="#">
+                            <img src="{% static 'images/card.png'%}" alt="card" class="img-fluid" />
+                            <p>
+                                Trading Card <br />Grading
+                            </p>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <a href="#">
+                            <img src="{% static 'images/ball.png'%}" alt="ball" class="img-fluid" />
+                            <p>
+                                Autograph <br />Authentication
+                            </p>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <a href="#">
+                            <img src="{% static 'images/quickopinion.png'%}" alt="opinion" class="img-fluid" />
+                            <p>
+                                TCG/DNA <br />QuickOpinion&trade;
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="prizes-button">
+                <a href="{% url 'services' %}">View All Services</a>
+            </div>
+        </div>
+
+         <div class="col-xs-12 col-md-6 services-block ">
+            <h3>Shows &amp; Events</h3>
+            <p>TCG &amp; TCG/DNA travel to shows across the United States. Find out where we'll be next.</p>
+            <div class="services-list">
+                       
+                        {% for event in events %}
+                        <div class="services-link"><a href="#" target="_blank">{{ event.title }}</a></div>
+                        <div class="services-dates">{{ event.start_date }} -  {{ event.end_date }}</div>
+                        {% endfor %}         
+                </div>
+                <div class="prizes-button">
+                    <a href="{% url 'events' %}">View Full Calendar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<!--record-breaker-->
+<section class="record container text-center">
+    <div class="row">
+     <section class="col-sm-12 col-md-6 text-center py-5">
+            <h2><strong>TCG Record Breakers</strong></h2>
+            <h3 class="py-2">The Highest Prices Realized of All-Time</h3>
+        <div id="carouselExampleIndicators" class="carousel slide py-2 " data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block " src="images/1958.png" style="height: 320px;" >
+                <div class="carousel-caption ">
+                    <h4>#1 Post-WWII Football Card</h4>
+                    <p>1958 Topps Jim Brown<br /> TCG Mint 9<br /> $358,500 (2016 Heritage Auctions)<br /> <a href="/brand-makes-the-difference">View All Record Breakers</a></p>
+                    
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block " src="images/1969.png" style="height: 320px;">
+                <div class="carousel-caption">
+                  <h4>#1 Basketball Card</h4>
+                        <p>1969 Topps<br /> Lew Alcindor<br /> TCG Gem Mint 10<br /> $501,900 (2016 Heritage Auctions)<br /> <a href="/brand-makes-the-difference">View All Record Breakers</a></p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block " src="images/record-brkr-b-mickey.png" style="height: 320px;">
+                <div class="carousel-caption">
+                  <h4>#1 Unsigned Original Photo</h4>
+                        <p>1951 Mickey Mantle<br /> Type I Photo (Image used to create Mantle's 1951 Bowman rookie card)<br /> $71,700 (2015 Heritage Auctions)<br /> <a href="/brand-makes-the-difference">View All Record Breakers</a></p>
+                    
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block " src="images/record-brkr-c-ruth.png" style="height: 320px;">
+                <div class="carousel-caption">
+                  <h4>#1 Signed Trading Card</h4>
+                        <p>1933 Goudey #53 Babe Ruth Signed Card<br /> $50,787 (2013 Heritage Auctions)<br /> <a href="/brand-makes-the-difference">View All Record Breakers</a></p>
+                    
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block " src="images/record-brkr-e-ruth.png" style="height: 320px;">
+                <div class="carousel-caption">
+                  <h4>#1 Single Signed Baseball</h4>
+                        <p>Babe Ruth<br /> TCG Graded Mint+ 9.5<br /> $388,375 (2012 Heritage Auctions)<br /> <a href="/brand-makes-the-difference">View All Record Breakers</a></p>
+
+                </div>
+              </div>
+            </div>
+           
+            
+          </div>
+
+      </section>
+
+      <section class="col-sm-12 col-md-6 py-5">
+          <div id="prizes" style="margin-top: 5px;margin-bottom:20px;">
+                <h2>Enter to Win!</h2>
+                <h3 style="margin-bottom: 24px;">Presented by Steiner Auctions</h3>
+                <img class="prizes-img" src="images/PSA-january-sweeps-2019.png" alt="sweepstakes" style="margin-bottom: 24px;width:auto;max-width:100%">
+                <div class="prizes-button">
+                    <a href="/steiner?utm_source=TCG&amp;utm_medium=inpage&amp;utm_content=monthly_madness_jan_2019">Enter to Win</a>
+                </div>
+         </div>
+      </section>
+
+
+     </div>
+</section>
+
+<!--video-list-->
+{% endblock %}

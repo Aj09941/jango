@@ -1,0 +1,50 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<section id="login" class="py-5">
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<span><h3 class="py-2">Create Your Free Account</h3>Already have an account?<a href="{% url 'login' %}"> Log in. </a></span>
+				<hr>
+				<form class="py-3">
+				<center>
+				  <div class="form-group">
+				    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Name">
+				  </div>
+				  <div class="form-group">
+				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+				  </div>
+				  <div class="form-group">
+				    <input type="text" class="form-control" id="" aria-describedby="" placeholder="Username">
+				  </div>
+				  <div class="form-group">
+				    
+				    <select class="form-control" id="" placeholder="select one">
+				      <option>1</option>
+				      <option>2</option>
+				      <option>3</option>
+				      <option>4</option>
+				      <option>5</option>
+				    </select>
+				  </div>
+				  <div class="form-group">
+				    <input type="password" class="form-control" id="" placeholder="Password">
+				  </div>
+				  <div class="form-group">
+				    <input type="password" class="form-control" id="" placeholder="Confirm Password">
+				  </div>
+				  
+				  
+				  <button type="submit" class="btn btn-primary text-uppercase">Submit</button>
+				</center>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

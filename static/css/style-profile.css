@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+.members-nav{
+	background: #f5f5f5;
+}
+
+.members-nav hr{
+	border-top: #fff solid 1px;
+	margin: 0;
+}
+
+.members-nav .members-nav-section .photo
+{
+	
+	font-size: 4rem;
+
+}
+
+.members-nav .member-title{
+	font-weight: bold;
+	word-spacing: 1px;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+}
+.members-nav ul{
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 0;
+	font-size: 15px;
+}
+.members-nav ul li{
+	margin: 20px 0;
+	padding: 0;
+}
+.members-nav ul li.active a{
+	color: #007aff;
+}
+
+.members-nav ul li a{
+	color: #333;
+	text-decoration: none;
+}
+.members-nav ul li a:hover{
+	color: #007aff;
+	text-decoration: none;
+}
+
+.members-nav .link{
+	font-size: 2rem;
+	text-decoration: none;
+	margin-left: 10px;
+	color: gray;
+}
+.members-content h3
+{
+	font-size: 1.9em;
+	text-transform: uppercase;
+	font-weight: 400;
+
+}
+.members-content .card-title{
+	font-weight: bold;
+	font-size: 3rem;
+	text-transform: uppercase;
+}
+.members-content .card-subtitle{
+	font-weight: bold;
+	font-size: 1rem;
+	text-transform: uppercase;
+	color: gray;
+}
+.members-content .card-price{
+	font-weight: bold;
+	font-size: 3rem;
+	text-transform: uppercase;
+}
+.members-content strong{
+	font-weight: bold;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
